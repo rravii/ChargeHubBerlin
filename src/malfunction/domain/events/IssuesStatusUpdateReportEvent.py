@@ -1,0 +1,9 @@
+from dataclasses import dataclass
+from datetime import datetime
+from src.common.domain.DomainEvent import DomainEvent
+
+
+@dataclass(frozen=True)
+class IssuesStatusUpdateReportEvent(DomainEvent):
+    incident_id: str
+    new_status: str
