@@ -7,9 +7,10 @@ from src.malfunction.domain.entities.Incident import Incident
 from src.malfunction.domain.value_objects.Email import Email
 from src.malfunction.domain.value_objects.StationLabel import StationLabel
 from src.malfunction.domain.value_objects.ProblemDescription import ProblemDescription
+from src.malfunction.infrastructure.repositories.IncidentRepositoryInterface import IncidentRepositoryInterface
 
 
-class IncidentRepository:
+class IncidentRepository(IncidentRepositoryInterface):
     """
     SQLite repository for Incident entities.
     """

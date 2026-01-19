@@ -17,8 +17,8 @@ from src.rating.infrastructure.data_prep.geo_prep import (
     preprop_lstat,
     preprop_resid,
 )
-from src.rating.ui.heatmaps import make_streamlit_electric_charging_resid
 from src.rating.ui.rating_ui import show_rating_page
+from src.shared.ui.heatmaps import make_streamlit_electric_charging_resid
 from src.shared.utils.timing import timer
 
 # --- AUTH IMPORTS ---

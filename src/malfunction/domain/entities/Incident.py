@@ -21,4 +21,4 @@ class Incident:
     is_valid: bool = False
     is_solved: bool = False
     points_awarded: int = 0
-    status: str = "PENDING"  # PENDING, PUBLISHED, RESOLVED
+    status: str = "PENDING"  # PENDING, IN PROGRESS, SOLVED

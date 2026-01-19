@@ -1,42 +1,13 @@
-"""User repository interface and SQLite implementation."""
+"""User repository SQLite implementation."""
 
 import sqlite3
-from abc import ABC, abstractmethod
 from typing import Optional, List
 
 from src.shared.auth.domain.entities.User import User
 from src.shared.auth.domain.value_objects.Email import Email
 from src.shared.auth.domain.value_objects.Password import Password
 from src.shared.auth.domain.value_objects.UserRole import UserRole
-
-
-class UserRepositoryInterface(ABC):
-    """Repository interface for User persistence."""
-    
-    @abstractmethod
-    def save(self, user: User) -> None:
-        """Persist user to storage."""
-        ...
-    
-    @abstractmethod
-    def find_by_email(self, email: Email) -> Optional[User]:
-        """Retrieve user by email."""
-        ...
-    
-    @abstractmethod
-    def get_pending_operators(self) -> List[tuple]:
-        """Get all operators awaiting approval."""
-        ...
-    
-    @abstractmethod
-    def approve_operator(self, email: Email) -> bool:
-        """Approve operator account."""
-        ...
-    
-    @abstractmethod
-    def delete_user(self, email: Email) -> bool:
-        """Delete user account."""
-        ...
+from src.shared.auth.infrastructure.repositories.UserRepositoryInterface import UserRepositoryInterface
 
 
 class SqliteUserRepository(UserRepositoryInterface):
